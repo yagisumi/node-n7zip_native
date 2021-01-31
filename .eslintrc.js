@@ -2,6 +2,7 @@ module.exports = {
   ignorePatterns: [
     '/lib/', //
     '/coverage/',
+    '/ext/',
   ],
   extends: [
     'eslint:recommended', //

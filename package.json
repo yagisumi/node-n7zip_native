@@ -1,26 +1,27 @@
 {
   "name": "@yagisumi/n7zip-native",
   "version": "0.1.0",
-  "description": "TODO",
-  "keywords": [],
+  "description": "A Node.js wrapper of 7zip with 7z.dll(7z.so)",
+  "keywords": [
+    "7zip",
+    "zip",
+    "rar"
+  ],
   "engines": {
-    "node": ">= 10.0.0"
+    "node": ">= 8.16.0"
   },
   "private": true,
   "main": "lib/n7zip-native",
-  "module": "lib/n7zip-native.mjs",
   "types": "lib/n7zip-native.d.ts",
   "unpkg": "umd/n7zip-native.js",
   "scripts": {
-    "test": "run-s prettier:check eslint:check jest",
-    "jest": "jest --config config/jest.config.js",
-    "mocha": "cross-env TS_NODE_FILES=true TS_NODE_PROJECT=test/tsconfig.mocha.json mocha --config config/.mocharc.json \"test/**/*.test.ts\"",
-    "mocha:coverage": "nyc --nycrc-path config/nyc.config.js npm run mocha -- --no-parallel",
+    "test": "run-s test:build prettier:check eslint:check mocha",
+    "test:build": "node-gyp rebuild --debug",
+    "mocha": "cross-env TS_NODE_FILES=true TS_NODE_CACHE=false mocha --expose-gc --config config/.mocharc.json \"test/**/*.test.ts\"",
+    "install": "node-gyp rebuild --debug",
     "build": "run-s clean build:*",
-    "clean": "rimraf lib coverage umd *.tgz .rpt2_cache .nyc_output",
+    "clean": "rimraf lib coverage umd *.tgz .rpt2_cache",
     "build:cjs": "rollup -c config/rollup.config.js -f cjs -o ./lib/n7zip-native.js",
-    "build:mjs": "rollup -c config/rollup.config.js -f es -o ./lib/n7zip-native.mjs",
-    "build:umd": "rollup -c config/rollup.config.umd.js",
     "build:d_ts": "tsc -p src -d --emitDeclarationOnly --outDir ./lib",
     "prettier:check": "prettier --check \"**/*.{ts,js,json}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,js,json}\"",
@@ -33,7 +34,6 @@
   "license": "MIT",
   "prettier": "@yagisumi/my-config-prettier",
   "devDependencies": {
-    "@types/jest": "^26.0.20",
     "@types/node": "^14.14.22",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",

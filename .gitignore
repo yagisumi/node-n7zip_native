@@ -5,6 +5,7 @@ node_modules/
 /umd/
 /lib/
 /build/
+/ext/7z/
 /dist/
 /src/*.js
 /src/*.map

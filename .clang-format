@@ -1,0 +1,11 @@
+---
+BasedOnStyle: Mozilla
+IndentWidth: 2
+ColumnLimit: 100
+---
+Language: Cpp
+Standard: Cpp11
+IndentPPDirectives: BeforeHash
+FixNamespaceComments: true
+SortIncludes: false
+AlignEscapedNewlines: Left

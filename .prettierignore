@@ -1,8 +1,7 @@
 /.*/
-/coverage
-/lib
-/umd
-/build
-/dist
+/coverage/
+/lib/
+/ext/
+/build/
 tsconfig.json
 tsconfig.*.json

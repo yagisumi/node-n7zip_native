@@ -1,5 +1,5 @@
 {
-  "name": "@yagisumi/n7zip-native",
+  "name": "@yagisumi/n7zip_native",
   "version": "0.1.0",
   "description": "A Node.js wrapper of 7zip with 7z.dll(7z.so)",
   "keywords": [
@@ -11,8 +11,8 @@
     "node": ">= 8.16.0"
   },
   "private": true,
-  "main": "lib/n7zip-native",
-  "types": "lib/n7zip-native.d.ts",
+  "main": "lib/n7zip_native",
+  "types": "lib/n7zip_native.d.ts",
   "scripts": {
     "test": "run-s test:build prettier:check eslint:check mocha",
     "test:build": "node-gyp rebuild --debug",
@@ -27,8 +27,8 @@
     "prepack": "run-s build test"
   },
   "author": "yagisumi",
-  "repository": "github:yagisumi/node-n7zip-native",
-  "homepage": "http://github.com/yagisumi/node-n7zip-native#readme",
+  "repository": "github:yagisumi/node-n7zip_native",
+  "homepage": "http://github.com/yagisumi/node-n7zip_native#readme",
   "license": "MIT",
   "prettier": "@yagisumi/my-config-prettier",
   "devDependencies": {
@@ -47,5 +47,9 @@
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.1.0"
   }
 }

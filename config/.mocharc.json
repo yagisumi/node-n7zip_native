@@ -1,5 +1,5 @@
 {
-  "require": ["mocha-ui-jest", "ts-node/register", "tsconfig-paths/register"],
+  "require": ["mocha-ui-jest", "ts-node/register", "tsconfig-paths/register", "./test/debug.ts"],
   "ui": "jest",
   "reporter": "list",
   "parallel": false,
